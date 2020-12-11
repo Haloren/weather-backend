@@ -1,4 +1,4 @@
 class LocationSerializer < ActiveModel::Serializer
-  attributes :id, :zip
-  has_one :user
+  attributes :id, :zip, :user_id
+  belongs_to :user
 end
