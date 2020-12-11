@@ -1,3 +1,4 @@
 class PreferenceSerializer < ActiveModel::Serializer
-  attributes :id, :zip, :color, :date, :time
+  attributes :id, :theme, :date_format, :time_format
+  has_one :user
 end

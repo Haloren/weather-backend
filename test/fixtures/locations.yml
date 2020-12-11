@@ -2,12 +2,8 @@
 
 one:
   user: one
-  theme: false
-  date_format: false
-  time_format: false
+  zip: 1
 
 two:
   user: two
-  theme: false
-  date_format: false
-  time_format: false
+  zip: 1
