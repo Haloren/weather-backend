@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :preferences
   resources :locations
   resources :notifications
   resources :users

@@ -10,12 +10,8 @@ User.create(email: 'email@email.com')
 User.create(email: 'test@test.com')
 
 Location.create(user_id: User.first.id, zip: '85086')
-Location.create(user_id: User.first.id, zip: '86337')
-
-Preference.create(user_id: User.first.id, theme:, date_format:, time_format:)
-Preference.create(user_id: User.first.id, theme:, date_format:, time_format:)
-Preference.create(user_id: User.second.id, theme:, date_format:, time_format:)
+Location.create(user_id: User.second.id, zip: '86337')
 
 Notification.create(user_id: User.first.id, event: 'Birthday', notes: 'Add a Name here', date: '01/01/2021')
-Notification.create(user_id: User.first.id, event: 'Anniversery', notes: 'Lol as if', date: '02/28/2021')
-Notification.create(user_id: User.second.id, event: 'Holiday', notes: 'Merry Krampus', date: '12/25/2021')
+Notification.create(user_id: User.first.id, event: 'Anniversery', notes: 'Lol as if', date: '02/02/2021')
+Notification.create(user_id: User.second.id, event: 'Holiday', notes: 'Merry Krampus', date: '12/12/2021')
