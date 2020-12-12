@@ -1,8 +1,6 @@
 class WeatherController < ApplicationController
   
     def index
-    #   @time = Time.new  
-    #   @now = @time.strftime("%k:%M") 
   
       @url = "https://api.openweathermap.org/data/2.5/weather?zip=85086,&appid=#{ENV['THEWEATHEROUTSIDEISWEATHER']}" # move to a model or make into a helper
       # byebug
