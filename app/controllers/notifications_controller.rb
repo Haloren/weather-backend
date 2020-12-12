@@ -32,7 +32,7 @@ class NotificationsController < ApplicationController
 
     private
     def set_user
-        @user = User.find(parmas[:user_id])
+        @user = User.find(params[:user_id])
     end
 
     def notification_params
