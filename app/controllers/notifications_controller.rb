@@ -1,17 +1,23 @@
 class NotificationsController < ApplicationController
+    before_action :set_user
 
     def index
-        notifications = Notification.all
+        notifications = @user.notifications
         render json: notifications
     end
 
     def show
-        notification = Notification.find_by(id: params[:id])
+        notification = @user.notifications.find_by(id: params[:id])
         render json: notification
     end
 
     def create
-
+        notification = @user.notifications.new(notification_params)
+        if notification.save
+            render json: notification
+        else 
+            render json: {message: notification.errors.full_messages.to_sentence}
+        end
     end
 
     def destroy
@@ -25,6 +31,10 @@ class NotificationsController < ApplicationController
     end
 
     private
+    def set_user
+        @user = User.find(parmas[:user_id])
+    end
+
     def notification_params
         params.require(:notification).permit(:event, :notes, :date, :user_id)
     end

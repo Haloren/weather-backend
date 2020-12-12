@@ -1,12 +1,23 @@
 class LocationsController < ApplicationController
+    before_action :set_user
 
     def index
-        locations = Location.all
+        locations = @user.locations
         render json: locations
     end
 
-    def create
+    def show
+        location = Location.find_by(id: params[:id])
+        render json: location
+    end
 
+    def create
+        location = @user.locations.new(location_params)
+        if location.save
+            render json: location
+        else 
+            render json: {message: location.errors.full_messages.to_sentence}
+        end
     end
 
     def destroy
@@ -20,6 +31,10 @@ class LocationsController < ApplicationController
     end
 
     private
+    def set_user
+        @user = User.find(parmas[:user_id])
+    end
+
     def location_params
         params.require(:location).permit(:zip, :user_id)
     end
