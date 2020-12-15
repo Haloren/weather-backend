@@ -29,7 +29,7 @@ class LocationsController < ApplicationController
             location.destroy
             render json: user
         else
-            render json: {message: "Unable to delete at this time"}
+            render json: {message: "Delete failed."}
         end
     end
 
