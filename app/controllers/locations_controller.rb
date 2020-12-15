@@ -14,7 +14,8 @@ class LocationsController < ApplicationController
     def create
         location = @user.locations.new(location_params)
         if location.save
-            render json: location
+            # render json: location
+            render json: @user
         else 
             render json: {message: location.errors.full_messages.to_sentence}
         end

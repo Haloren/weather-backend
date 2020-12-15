@@ -2,7 +2,7 @@ class WeatherController < ApplicationController
   
     def index
   
-      @url = "https://api.openweathermap.org/data/2.5/weather?zip=85086,&appid=#{ENV['THEWEATHEROUTSIDEISWEATHER']}" # move to a model or make into a helper
+      # @url = "https://api.openweathermap.org/data/2.5/weather?zip=85086,&appid=#{ENV['THEWEATHEROUTSIDEISWEATHER']}" # move to a model or make into a helper
       # byebug
       @uri = URI(@url)
       @response = Net::HTTP.get(@uri)
