@@ -22,12 +22,14 @@ class LocationsController < ApplicationController
     end
 
     def destroy
+        # byebug
         location = Location.all.find_by(id: params[:id])
+        user = User.find(location.user_id)
         if location
             location.destroy
-            render json: {message: "Zip code deleted"}
+            render json: user
         else
-            render json: {message: "Delete failed"}
+            render json: {message: "Unable to delete at this time"}
         end
     end
 
