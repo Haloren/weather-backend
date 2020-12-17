@@ -1,3 +1,8 @@
+
+- Run Rails API on port 3001 by typing into your terminal:
+    ## rails s -p 3001
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the

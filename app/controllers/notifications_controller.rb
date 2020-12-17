@@ -14,17 +14,20 @@ class NotificationsController < ApplicationController
     def create
         notification = @user.notifications.new(notification_params)
         if notification.save
-            render json: notification
+            # render json: notification
+            render json: @user
         else 
             render json: {message: notification.errors.full_messages.to_sentence}
         end
     end
 
     def destroy
+        # byebug
         notification = Notification.all.find_by(id: params[:id])
+        user = User.find(notification.user_id)
         if notification
             notification.destroy
-            render json: {message: "Notification deleted"}
+            render json: user
         else
             render json: {message: "Delete failed"}
         end
